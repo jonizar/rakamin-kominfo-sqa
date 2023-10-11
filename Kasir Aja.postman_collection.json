@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "a27ecfa3-82e0-4682-9c3b-b320b7692885",
+		"name": "Kasir Aja",
+		"description": "This documentation is home work from RAKAMAIN and KOMINFO learning program QA.\n\nCreated by Jonizar\n\nabout.me/jonizar\n\n[Connect my LinkedIn](https://www.linkedin.com/in/jonizar/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30421923"
+	},
+	"item": [
+		{
+			"name": "Authorization - Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"nama Toko\",\r\n   \"email\": \"sample@ex.com\",\r\n   \"password\": \"123adsfadf@\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/registration",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"registration"
+					]
+				},
+				"description": "**Use this API to get OAuth 2.0 Token for authorization. This token will be an access token that must be added to every request header to our API resources.**"
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization - Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"sample@ex.com\",\r\n   \"password\": \"123adsfadf@\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authentications",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authentications"
+					]
+				},
+				"description": "**Use this API to get OAuth 2.0 Token for authorization. This token will be an access token that must be added to every request header to our API resources.**"
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization - Refresh Token",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwYzk1YjQ4LTBiYzctNDBmNC05YmIyLTZjZWI5NTA1NWE5MCIsImNvbXBhbnlJZCI6ImYyNzk0MDM3LTFhNjYtNGM3Yi1iMzA4LTE4NTgzMDVhMDJjMiIsImlhdCI6MTY5Njk5MzE2OH0.MbjPB5KTnn6ZhUl3DwIXLSbN5R8diZ7Cp8MwIuuEF-Y\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authentications",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authentications"
+					]
+				},
+				"description": "**Use this api to get a new token if the accessToken has already expired. This new token will be an access token that must be added to every request header to our API resources.**"
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwYzk1YjQ4LTBiYzctNDBmNC05YmIyLTZjZWI5NTA1NWE5MCIsImNvbXBhbnlJZCI6ImYyNzk0MDM3LTFhNjYtNGM3Yi1iMzA4LTE4NTgzMDVhMDJjMiIsImlhdCI6MTY5Njk5MzE2OH0.MbjPB5KTnn6ZhUl3DwIXLSbN5R8diZ7Cp8MwIuuEF-Y\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/authentications",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"authentications"
+					]
+				},
+				"description": "**Use this API to logout**"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Create User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"kasir-serbaguna\",\r\n   \"email\": \"user@example.com\",\r\n   \"password\": \"jiasda2321@\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "**Use this API to create a new user in one company (such as Kasir roles)**"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Get User Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{userid}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{userid}"
+					]
+				},
+				"description": "**Use this api to get about one user details**"
+			},
+			"response": [
+				{
+					"name": "User - Get User Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/6d6c1840-ba23-4ae2-80b4-faafe8457123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6d6c1840-ba23-4ae2-80b4-faafe8457123"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "User - Get User List",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users"
+					]
+				},
+				"description": "**Use this api to get a list of products associated with user’s token**"
+			},
+			"response": []
+		},
+		{
+			"name": "User - Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/users/{userid}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{userid}"
+					]
+				},
+				"description": "**Use this api to update user detail**"
+			},
+			"response": [
+				{
+					"name": "User - Update User",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"update-user\",\r\n    \"email\": \"user@example.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6d6c1840-ba23-4ae2-80b4-faafe8457123",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6d6c1840-ba23-4ae2-80b4-faafe8457123"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "User - Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/users/{userid}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"users",
+						"{userid}"
+					]
+				},
+				"description": "**Use this api to delete user**"
+			},
+			"response": [
+				{
+					"name": "User - Delete User",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/users/576ed8d3-c65c-48bf-bb6b-ad865c18d528",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"576ed8d3-c65c-48bf-bb6b-ad865c18d528"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Units - Add Unit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"gram\",\r\n   \"description\": \"weight measurement\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/units",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"units"
+					]
+				},
+				"description": "**Use this api to add new unit**"
+			},
+			"response": []
+		},
+		{
+			"name": "Units - Get Unit Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/units/{unitid}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"units",
+						"{unitid}"
+					]
+				},
+				"description": "**Use this api to get about one unit details**"
+			},
+			"response": [
+				{
+					"name": "Units - Get Unit Detail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/units/811f547e-a24e-4f94-bfe1-b7ed7d11c03f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"units",
+								"811f547e-a24e-4f94-bfe1-b7ed7d11c03f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Units - Get Unit List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/units",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"units"
+					]
+				},
+				"description": "**Use this api to get a list of unit associated with user’s token**"
+			},
+			"response": []
+		},
+		{
+			"name": "Units - Update Unit",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"update-meter\",\r\n   \"description\": \"no-meter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/units/{unit}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"units",
+						"{unit}"
+					]
+				},
+				"description": "**Use this api to update Unit detail**"
+			},
+			"response": []
+		},
+		{
+			"name": "Units - Delete Unit",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/units/{unitid}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"units",
+						"{unitid}"
+					]
+				},
+				"description": "**Use this api to delete unit**"
+			},
+			"response": [
+				{
+					"name": "Delete Unit",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/units/811f547e-a24e-4f94-bfe1-b7ed7d11c03f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"units",
+								"811f547e-a24e-4f94-bfe1-b7ed7d11c03f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Categories - Add Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"makanan ringan\",\r\n   \"description\": \"makanan ringan dari indofood\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/categories",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories"
+					]
+				},
+				"description": "**Use this api to add new category**"
+			},
+			"response": []
+		},
+		{
+			"name": "Categories - Get Category Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/categories/{categoryId}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories",
+						"{categoryId}"
+					]
+				},
+				"description": "**Use this api to get about one unit details**"
+			},
+			"response": [
+				{
+					"name": "Get Category Detail",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categories/811f547e-a24e-4f94-bfe1-b7ed7d11c03f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"811f547e-a24e-4f94-bfe1-b7ed7d11c03f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Categories - Get Category List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/categories?q=makanan&page=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "makanan",
+							"description": "Filter category list by category name"
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"description": "Filter category  list by page"
+						}
+					]
+				},
+				"description": "**Use this api to get a list of categories associated with user’s token**"
+			},
+			"response": []
+		},
+		{
+			"name": "Categories - Update Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\": \"update-minuman\",\r\n   \"description\": \"no-minuman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/categories/{categoryId}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories",
+						"{categoryId}"
+					]
+				},
+				"description": "**Use this api to update category detail**"
+			},
+			"response": []
+		},
+		{
+			"name": "Categories - Delete Category",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/categories/{categoryId}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories",
+						"{categoryId}"
+					]
+				},
+				"description": "**Use this api to delete category**"
+			},
+			"response": [
+				{
+					"name": "Delete Category",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categories/811f547e-a24e-4f94-bfe1-b7ed7d11c03f",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"811f547e-a24e-4f94-bfe1-b7ed7d11c03f"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{accessToken}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://kasir-api.belajarqa.com",
+			"type": "default"
+		}
+	]
+}
